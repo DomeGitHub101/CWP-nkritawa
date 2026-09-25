@@ -4,10 +4,10 @@ def main():
     # ตัวอย่างที่ 1: King ถูก Rook โจมตี
     print("--- Test Case 1 ---")
     board1 = """\
-R...
-.K..
-..P.
-....\
+Rsss
+FKuu
+p.Pg
+eart\
 """
     checkmate(board1) # คาดหวัง: Success
 

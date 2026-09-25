@@ -3,8 +3,16 @@ def is_valid_pos(size, r, c):
     return 0 <= r < size and 0 <= c < size
 
 def checkmate(board_str):
+
+    if not isinstance(board_str, str):
+        return
+
+    rows = board_str.splitlines()
+    valid_piece = {'K', 'Q', 'R', 'B', 'N', 'P'}
     
-    rows = [row for row in board_str.strip().split('\n') if row]
+    row = [''.join(piece if piece in valid_piece else '.' for piece in row)
+           for row in rows]
+  
     if not rows:
         return
 
@@ -19,6 +27,7 @@ def checkmate(board_str):
             if piece == 'K':
                 king_pos = (r, c)
                 king_count += 1
+        
 
     if king_count != 1:
         return
